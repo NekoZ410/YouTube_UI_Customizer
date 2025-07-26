@@ -84,7 +84,7 @@ const styleSettings = {
     },
 };
 
-// inject or update a custom style into DOM
+// global: inject or update a custom style into DOM
 function injectCustomStyle(styleId, cssRules) {
     const existingStyle = document.getElementById(styleId);
     if (existingStyle) {
@@ -99,7 +99,7 @@ function injectCustomStyle(styleId, cssRules) {
     // console.log(`Injected style: ${styleId}`);
 }
 
-// remove all styles from DOM
+// global: remove all styles from DOM
 function removeAllStyles() {
     Object.values(styleSettings).forEach(({ styleId }) => {
         const style = document.getElementById(styleId);
@@ -109,7 +109,7 @@ function removeAllStyles() {
     });
 }
 
-// apply styles based on settings
+// global: apply styles based on settings
 function applyStyles(settings) {
     // console.log("Applying styles with settings:", settings);
     removeAllStyles();
@@ -121,7 +121,7 @@ function applyStyles(settings) {
     });
 }
 
-// init and caching settings on load
+// global: init and caching settings on load
 let cachedSettings = {};
 chrome.storage.local.get(Object.keys(styleSettings), (settings) => {
     cachedSettings = Object.keys(styleSettings).reduce(
@@ -146,7 +146,7 @@ chrome.storage.local.get(Object.keys(styleSettings), (settings) => {
     });
 });
 
-// listen for storage changes
+// global: listen for storage changes
 chrome.storage.onChanged.addListener((changes, namespace) => {
     if (namespace === "local") {
         Object.keys(changes).forEach((key) => {
@@ -157,6 +157,7 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
     }
 });
 
+// global: listen for messages
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.message === "update_styles") {
         // check changedId error
@@ -180,6 +181,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                 }
                 // sendResponse({ status: "Style updated" });
             });
+            return true; // keep message channel open for async
         } else {
             // update all styles if changedId is not provided
             chrome.storage.local.get(Object.keys(styleSettings), (settings) => {
@@ -188,7 +190,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                 applyStyles(settings);
                 // sendResponse({ status: "Styles updated" });
             });
+            return true; // keep message channel open for async
         }
-        return true; // keep message channel open for async
     }
+    return false;
 });

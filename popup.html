@@ -3,15 +3,17 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>YouTube UI Customizer</title>
         <style>
             body {
-                width: fit-content;
                 padding: 10px;
                 margin: 10px;
                 font-family: consolas;
                 text-align: center;
-                border: 1px solid black;
+                border: 1px solid whitesmoke;
+                color: whitesmoke;
+                background-color: rgba(27, 27, 35, 1);
+                width: fit-content;
                 min-width: 500px;
             }
 
@@ -28,12 +30,12 @@
                 margin: 0;
             }
 
-            .checkbox-group {
-                display: flex;
+            .group {
                 flex-direction: column;
                 gap: 8px;
                 margin: 0 0 10px 0;
                 text-align: left;
+                display: flex;
             }
 
             .type {
@@ -46,33 +48,33 @@
         </style>
     </head>
     <body>
-        <div class="info">
-            <h2 class="name">YouTube UI Customizer</h2>
-            <h3 class="version">v<span id="version"></span></h3>
-        </div>
+        <div class="container">
+            <div class="info">
+                <h2 class="name">YouTube UI Customizer</h2>
+                <h3 class="version">v<span id="version"></span></h3>
+            </div>
+            <hr />
+            <section class="group">
+                <h4 class="type">Texts</h4>
+                <label><input type="checkbox" id="video-title-home" /> Show full Video title in Home page</label>
+                <label><input type="checkbox" id="video-title-player" /> Show full Video title in Player side panel</label>
+                <label><input type="checkbox" id="video-title-playlist" /> Show full Video title inside Playlist side panel</label>
+                <br />
+                <label><input type="checkbox" id="playlist-title-home" /> Show full Playlist title in Home page</label>
+                <label><input type="checkbox" id="playlist-title-player" /> Show full Playlist title in Player side panel</label>
+                <label><input type="checkbox" id="playlist-info" /> Show full Playlist info</label>
+                <br />
+                <label><input type="checkbox" id="shorts-title" /> Show full Shorts title</label>
+                <br />
+                <label><input type="checkbox" id="channel-info-player" /> Show full channel info under Player</label>
+                <label><input type="checkbox" id="joinMembership-button-player" /> Fix "Join Membership" button under Player</label>
+            </section>
 
-        <hr>
-
-        <div class="checkbox-group">
-            <h4 class="type">Video</h4>
-            <label><input type="checkbox" id="video-title-home" /> Show full Video title in Home page</label>
-            <label><input type="checkbox" id="video-title-player" /> Show full Video title in Player side panel</label>
-            <label><input type="checkbox" id="video-title-playlist" /> Show full Video title inside Playlist side panel</label>
-
-            <h4 class="type">Playlist</h4>
-            <label><input type="checkbox" id="playlist-title-home" /> Show full Playlist title in Home page</label>
-            <label><input type="checkbox" id="playlist-title-player" /> Show full Playlist title in Player side panel</label>
-            <label><input type="checkbox" id="playlist-info" /> Show full Playlist info</label>
-
-            <h4 class="type">Short</h4>
-            <label><input type="checkbox" id="shorts-title" /> Show full Shorts title</label>
-
-            <h4 class="type">Other</h4>
-            <label><input type="checkbox" id="channel-info-player" /> Show full channel info in Player</label>
-            <label><input type="checkbox" id="joinMembership-button-player" /> Fix "Join Membership" button in Player</label>
+            <!-- <section class="group">
+                <h4 class="type"></h4>
+            </section> -->
         </div>
 
         <script src="popup.js"></script>
     </body>
 </html>
-<!DOCTYPE html>

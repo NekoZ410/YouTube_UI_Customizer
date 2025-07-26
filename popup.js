@@ -1,5 +1,6 @@
 // wait DOM init
 document.addEventListener("DOMContentLoaded", () => {
+    // settings
     const settings = [
         "video-title-home",
         "video-title-player",
@@ -29,15 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
             // console.log("Initialized default settings");
 
             // send message to apply initial styles
-            // chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-            //     if (tabs[0]?.url.includes("youtube.com")) {
-            //         chrome.tabs.sendMessage(tabs[0].id, { message: "update_styles" }, (response) => {
-            //             // console.log("Initial message sent to content script:", response);
-            //         });
-            //     } else {
-            //         // console.log("Not on YouTube, no initial message sent");
-            //     }
-            // });
+            chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+                if (tabs[0]?.url.includes("youtube.com")) {
+                    chrome.tabs.sendMessage(tabs[0].id, { message: "update_styles" }, (response) => {
+                        console.log("Initial message sent to content script:", response);
+                    });
+                } else {
+                    // console.log("Not on YouTube, no initial message sent");
+                }
+            });
         });
     });
 
@@ -53,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
                     if (tabs[0]?.url.includes("youtube.com")) {
                         chrome.tabs.sendMessage(tabs[0].id, { message: "update_styles", changedId: id }, (response) => {
-                            // console.log("Message sent to content script:", response);
+                            console.log("Message sent to content script:", response);
                         });
                     } else {
                         // console.log("Not on YouTube, no message sent");
