@@ -1,7 +1,7 @@
 // settings
 const styleSettings = {
-    "video-title-home": {
-        styleId: "video-title-home-display-full",
+    "text-video-title-home": {
+        styleId: "text-video-title-home-display-full",
         css: `#video-title.ytd-video-renderer,
             #video-title.ytd-compact-video-renderer,
             #video-title.ytd-rich-grid-media,
@@ -12,51 +12,51 @@ const styleSettings = {
                 max-height: unset !important;
             }`,
     },
-    "video-title-player": {
-        styleId: "video-title-player-display-full",
+    "text-video-title-player": {
+        styleId: "text-video-title-player-display-full",
         css: `yt-lockup-view-model.ytd-item-section-renderer .yt-lockup-metadata-view-model-wiz__title {
                 display: block !important;
                 max-height: unset !important;
             }`,
     },
-    "video-title-playlist": {
-        styleId: "video-title-playlist-display-full",
+    "text-video-title-playlist": {
+        styleId: "text-video-title-playlist-display-full",
         css: `#video-title.ytd-playlist-panel-video-renderer {
                 display: block !important;
                 max-height: unset !important;
             }`,
     },
-    "playlist-title-home": {
-        styleId: "playlist-title-home-display-full",
+    "text-playlist-title-home": {
+        styleId: "text-playlist-title-home-display-full",
         css: `ytd-rich-item-renderer yt-lockup-view-model.ytd-rich-item-renderer .yt-lockup-metadata-view-model-wiz__title {
                 display: block !important;
                 max-height: unset !important;
             }`,
     },
-    "playlist-title-player": {
-        styleId: "playlist-title-player-display-full",
+    "text-playlist-title-player": {
+        styleId: "text-playlist-title-player-display-full",
         css: `.ytd-playlist-panel-renderer[modern-panels]:not([hide-header-text]),
             .title.ytd-playlist-panel-renderer {
                 display: block !important;
                 max-height: unset !important;
             }`,
     },
-    "playlist-info": {
-        styleId: "playlist-info-display-full",
+    "text-playlist-info": {
+        styleId: "text-playlist-info-display-full",
         css: `.yt-content-metadata-view-model-wiz--medium-text,
             .yt-content-metadata-view-model-wiz__metadata-text {
                 white-space: unset !important;
             }`,
     },
-    "shorts-title": {
-        styleId: "shorts-title-display-full",
+    "text-shorts-title": {
+        styleId: "text-shorts-title-display-full",
         css: `.shortsLockupViewModelHostMetadataTitle {
                 display: block !important;
                 max-height: unset !important;
             }`,
     },
-    "channel-info-player": {
-        styleId: "channel-info-player-display-full",
+    "text-channel-info-player": {
+        styleId: "text-channel-info-player-display-full",
         css: `#upload-info {
                 margin-right: 5px !important;
                 overflow: unset !important;
@@ -69,8 +69,8 @@ const styleSettings = {
                 white-space: nowrap;
             }`,
     },
-    "joinMembership-button-player": {
-        styleId: "joinMembership-button-player-display-full",
+    "text-joinMembership-button-player": {
+        styleId: "text-joinMembership-button-player-display-full",
         css: `#owner {
                 flex-direction: row !important;
                 align-items: center !important;

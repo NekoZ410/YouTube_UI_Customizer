@@ -2,15 +2,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     // settings
     const settings = [
-        "video-title-home",
-        "video-title-player",
-        "video-title-playlist",
-        "playlist-title-home",
-        "playlist-title-player",
-        "playlist-info",
-        "shorts-title",
-        "channel-info-player",
-        "joinMembership-button-player",
+        "text-video-title-home",
+        "text-video-title-player",
+        "text-video-title-playlist",
+        "text-playlist-title-home",
+        "text-playlist-title-player",
+        "text-playlist-info",
+        "text-shorts-title",
+        "text-channel-info-player",
+        "text-joinMembership-button-player",
     ];
 
     // display version from manifest
