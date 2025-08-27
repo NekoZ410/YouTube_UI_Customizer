@@ -1,4 +1,3 @@
-// wait DOM init
 document.addEventListener("DOMContentLoaded", () => {
     // settings for text customizations
     const textSettings = [
@@ -13,18 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
         "text-joinMembership-button-player",
     ];
 
-    // initialize default, update checkboxes
+    // initialize text settings
     chrome.storage.local.get(textSettings, (data) => {
-        const defaultSettings = {};
+        const defaultTextSettings = {};
         textSettings.forEach((id) => {
-            defaultSettings[id] = data[id] !== undefined ? data[id] : true;
+            defaultTextSettings[id] = data[id] !== undefined ? data[id] : true;
             const checkbox = document.getElementById(id);
             if (checkbox) {
-                checkbox.checked = defaultSettings[id];
+                checkbox.checked = defaultTextSettings[id];
             }
         });
 
-        chrome.storage.local.set(defaultSettings, () => {
+        chrome.storage.local.set(defaultTextSettings, () => {
             sendUpdateStylesMessage();
         });
     });
