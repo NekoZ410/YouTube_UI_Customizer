@@ -7,6 +7,9 @@ const playerStyleSettings = {
             const unit = settings["player-controls-background-height-unit"];
             return `.ytp-gradient-bottom {
                         height: ${height}${unit} !important;
+                    }
+                    .ytp-big-mode .ytp-gradient-bottom {
+                        padding-top: 45px !important;
                     }`;
         },
     },
@@ -24,7 +27,10 @@ const playerStyleSettings = {
 
             const rgbColor = hexToRgb(color);
 
-            return `.ytp-gradient-bottom {
+            return `.ytp-gradient-top {
+                        background-image: none !important;
+                    }
+                    .ytp-gradient-bottom {
                         background-image: none !important;
                         background-color: rgba(${rgbColor}, ${alpha}) !important;
                     }`;
