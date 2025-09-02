@@ -41,20 +41,24 @@ const textStyleSettings = {
         css: `.title.ytd-playlist-panel-renderer {
                 display: block !important;
                 max-height: unset !important;
-            }`,
-    },
-    "text-playlist-info": {
-        styleId: "text-playlist-info-display-full",
-        css: `#contents.yt-content-metadata-view-model > .yt-content-metadata-view-model__metadata-row:first-child .yt-core-attributed-string[role="text"] {
-                white-space: unset !important;
             }
             #next-video-title yt-formatted-string {
+                white-space: unset !important;
+            }
+            #publisher-container yt-formatted-string {
+                white-space: unset;
+                max-height: unset;
+            }`,
+    },
+    "text-playlist-info-all": {
+        styleId: "text-playlist-info-all-display-full",
+        css: `#contents .yt-content-metadata-view-model > .yt-content-metadata-view-model__metadata-row:first-child .yt-core-attributed-string[role="text"] {
                 white-space: unset !important;
             }`,
     },
 
-    "text-shorts-title": {
-        styleId: "text-shorts-title-display-full",
+    "text-shorts-title-all": {
+        styleId: "text-shorts-title-all-display-full",
         css: `.shortsLockupViewModelHostMetadataTitle {
                 display: block !important;
                 max-height: unset !important;

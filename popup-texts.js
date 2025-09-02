@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "text-playlist-title-home",
         "text-playlist-title-playerSidebar",
         "text-playlist-title-playlistPanel",
-        "text-playlist-info",
+        "text-playlist-info-all",
 
-        "text-shorts-title",
+        "text-shorts-title-all",
 
         "text-channel-info-player",
         "text-joinMembership-button-player",
