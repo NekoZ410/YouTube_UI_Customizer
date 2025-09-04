@@ -12,6 +12,9 @@ const textStyleSettings = {
         css: `#items #contents .yt-lockup-metadata-view-model__title:not([href*="&list="]) {
                 display: block !important;
                 max-height: unset !important;
+            }
+            #items #contents .yt-lockup-view-model__content-image:not([href*="&list="]) .ytThumbnailViewModelHost {
+                align-self: center;
             }`,
     },
     "text-video-title-playlistPanel": {
@@ -19,6 +22,9 @@ const textStyleSettings = {
         css: `#video-title.ytd-playlist-panel-video-renderer {
                 display: block !important;
                 max-height: unset !important;
+            }                
+            #items #thumbnail-container {
+                align-self: anchor-center;
             }`,
     },
 
@@ -34,6 +40,12 @@ const textStyleSettings = {
         css: `#items #contents .yt-lockup-metadata-view-model__title[href*="&list="] {
                 display: block !important;
                 max-height: unset !important;
+            }
+            #items #contents .yt-lockup-view-model__content-image[href*="&list="] .ytThumbnailViewModelHost {
+                align-self: center;
+            }
+            #items #contents .yt-lockup-view-model__content-image[href*="&list="] .ytCollectionThumbnailViewModelHost {
+                align-content: center;
             }`,
     },
     "text-playlist-title-playlistPanel": {
