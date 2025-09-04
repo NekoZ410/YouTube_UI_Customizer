@@ -1,5 +1,3 @@
-// popup-player.js
-
 document.addEventListener("DOMContentLoaded", () => {
     // settings for player customizations
     const defaultPlayerSettings = {
