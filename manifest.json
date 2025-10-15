@@ -11,13 +11,18 @@
     "content_scripts": [
         {
             "matches": ["*://*.youtube.com/*"],
-            "js": ["content-core.js", "content-texts.js", "content-player.js"],
+            "js": ["content-core.js", "content-texts.js", "content-player.js", "content-ui.js"],
             "run_at": "document_start"
         },
         {
             "matches": ["*://*.youtube.com/*"],
             "js": ["content-utilities.js"],
             "run_at": "document_start"
+        },
+        {
+            "matches": ["*://*.youtube.com/*"],
+            "js": ["./test/content-experiment.js"],
+            "run_at": "document_idle"
         }
     ],
     "background": {

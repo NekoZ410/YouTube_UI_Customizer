@@ -18,7 +18,7 @@
             }
 
             .groups {
-                max-height: 600px;
+                /* max-height: 600px; */
                 overflow-y: auto;
             }
 
@@ -73,6 +73,30 @@
             <hr />
             <div class="groups">
                 <section class="group">
+                    <h4 class="type">UI</h4>
+                    <label>
+                        <input type="checkbox" id="ui-videosPerRow-home-toggle" /> Videos per row (Home):
+                        <input type="number" id="ui-videosPerRow-home" value="3" step="1" min="1" onmousewheel="e.preventDefault();" />
+                        <button id="ui-videosPerRow-home-reset">Reset</button>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="ui-shortsPerRow-home-toggle" /> Shorts per row (Home):
+                        <input type="number" id="ui-shortsPerRow-home" value="5" step="1" min="1" onmousewheel="e.preventDefault();" />
+                        <button id="ui-shortsPerRow-home-reset">Reset</button>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="ui-postsPerRow-home-toggle" /> Posts per row (Home):
+                        <input type="number" id="ui-postsPerRow-home" value="3" step="1" min="1" onmousewheel="e.preventDefault();" />
+                        <button id="ui-postsPerRow-home-reset">Reset</button>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="ui-newsPerRow-home-toggle" /> News per row (Home):
+                        <input type="number" id="ui-newsPerRow-home" value="3" step="1" min="1" onmousewheel="e.preventDefault();" />
+                        <button id="ui-newsPerRow-home-reset">Reset</button>
+                    </label>
+                </section>
+
+                <section class="group">
                     <h4 class="type">Texts</h4>
                     <label><input type="checkbox" id="text-video-title-home" /> Show full Video title (Home)</label>
                     <label><input type="checkbox" id="text-video-title-playerSidebar" /> Show full Video title (Player sidebar)</label>
@@ -126,5 +150,6 @@
         <script src="popup-texts.js"></script>
         <script src="popup-player.js"></script>
         <script src="popup-utilities.js"></script>
+        <script src="popup-ui.js"></script>
     </body>
 </html>
